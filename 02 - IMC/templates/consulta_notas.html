@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Consultar Notas</title>
+    <link rel="stylesheet" href="/static/styles/estilo.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Lançar IMC</a>
+        <img src="/static/assets/A.png" alt="">
+        <a href="consulta">Consultar IMC</a>
+    </nav>
+    <div class="consulta_notas">
+        <h2>Consultar Notas</h2>
+        <table>
+            <tr>
+                <th>Nome do Paciente</th>
+                <th>Peso</th>
+                <th>Altura</th>
+                <th>IMC</th>
+                <th>Status</th>
+            </tr>
+            {% for pro in prod %}
+            <tr>
+                <td>{{pro.nome}}</td>
+                <td>{{pro.peso}}</td>
+                <td>{{pro.altura}}</td>
+                <td>{{ pro.imc}}</td>
+                <td>{{ pro.status}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

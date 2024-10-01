@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra seu IMC</title>
+    <link rel="stylesheet" href="/static/styles/estilo.css">
+</head>
+<body>
+    <nav>
+        <a href="/">IMC</a>
+        <img src="/static/assets/A.png" alt="">
+        <a href="consulta">Resultado</a>
+    </nav>
+    <div class="cad_imc">
+        <form action="/validar_imc" method="post" class="cad_imc_formulario">
+
+            <h2>Cálculo de IMC</h2>
+            
+            <img src="/static/assets/imc.png" alt="" 
+            width="280">
+
+            <label for="">Nome  :</label>
+            <input type="text" name="nome_paciente" id="nome_paciente">
+
+            <div>
+            <label for="">Altura (m):</label>
+            <input type="text" name="altura" id="altura">
+
+            <label for="">Peso (kg):</label>
+            <input type="text" name="peso" id="peso">
+            </div>
+
+            <div class="botoes">
+                <button type="submit" class="cad_imc_enviar">Enviar</button>
+                <button type="submit" class="cad_imc_deletar" onclick="limparCampos()">Deletar</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function limparCampos() {
+            document.getElementById("nome_paciente").value = "";
+            document.getElementById("altura").value = "";
+            document.getElementById("peso").value = "";
+        }
+    </script>
+</body>
+</html>
