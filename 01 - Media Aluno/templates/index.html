@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/estilo.css">
+    <title>OBJETIVO</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Lançar</a> |
+            <a href="/notas">Notas</a>
+        </nav>
+    </header>
+    <img src="/static/assets/sesilogosite.png" alt="" class="sesi_logo_site">
+    <div class="media_aluno">
+        <form action="/resultado" method="post" class="inf_nome_notas">
+            
+            <h2> Lançar Notas </h2>
+        
+            <label for="">Nome do Aluno</label>
+            <input type="text" name="nome_aluno" id="nome_aluno">
+
+            <label for="">Primeira Nota</label>
+            <input type="text" name="nota_1" id="nota_1">
+
+            <label for="">Segunda Nota</label>
+            <input type="text" name="nota_2" id="nota_2">
+
+            <label for="">Terceira Nota</label>
+            <input type="text" name="nota_3" id="nota_3">
+            
+            <div class="botoes">
+                <button type="submit">Lançar</button>   
+            </div>
+            
+        </form> 
+    </div>
+</body>
+</html> 

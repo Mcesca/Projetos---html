@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --fonte-primaria: "Poppins", sans-serif;
+    --fonte-secundaria: "Montserrat", sans-serif;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: rgb(0, 0, 0);
+}
+
+/* Especificações dos Elementos em Geral */
+header{
+    background-color: antiquewhite;
+    padding: 20px 0;
+    text-align: center;
+}   
+nav a{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+main {
+    margin-top: 30px;
+    padding: 20px;
+}
+.media_aluno{
+    display: flex;
+    justify-content: center;
+}
+
+/* Exibição em Grade */ 
+
+.inf_nome_notas{
+    display: grid;
+    grid-template-columns: auto;
+    margin-top: 28px;
+    border: 0.5px solid black;
+    background-color: rgb(121, 121, 105);
+    padding: 20px 200px 50px 200px;
+    border-radius: 20px;
+    box-shadow: 10px 10px rgb(208, 211, 214);
+}
+
+/* Detalhamento do Título "Lançar Notas */
+
+.media_aluno h2{
+    font-family: var(--fonte-primaria);
+    margin-bottom: 30px;
+    margin-top: 15px;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+}
+
+/* Detalhamento das Caixas de Texto */
+
+.media_aluno label{
+    margin-top: 8px;
+    font-family: var(--fonte-secundaria);
+    font-size: 20px;
+}
+
+/* Detalhamento do Botão "lançar" */
+
+.botoes{
+    margin-top: 25px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 70px linen;
+}
+
+/* Hover das Caixas de Texto */
+
+.inf_nome_notas input[type="text"]:hover{
+    background-color: rgb(208, 211, 214);
+}
+
+.inf_nome_notas input[type="text"]:focus{
+    background-color: rgb(208, 211, 214);
+}
+
+/* Espaçamento Interno das Caixas de Texto */
+
+.inf_nome_notas input{
+    padding-left: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.inf_nome_notas label{
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+/* PAGINA DE CONSULTA DE NOTAS */
+/* PAGINA DE CONSULTA DE NOTAS */
+/* PAGINA DE CONSULTA DE NOTAS */
+/* PAGINA DE CONSULTA DE NOTAS */
+/* PAGINA DE CONSULTA DE NOTAS */
+
+
+/*exibição da página em colunas, espaçamento, cores e borda */ 
+* {
+    color: aliceblue;
+}
+header{
+    background-color: rgb(121, 121, 105);
+    padding: 20px 0;
+    text-align: center;
+}   
+nav a{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    color: aliceblue;
+    padding: 30px;
+    font-size: 25px;
+}
+main {
+    margin-top: 30px;
+    padding: 20px;
+}
+.consultar_notas{
+    display: grid;
+    grid-template-columns: auto;
+    place-items: center;
+    margin-top: 10px;
+    font-family: var(--fonte-primaria);
+    font-size: 26px;
+    border: 0.5px solid black;
+    background-color: rgb(0, 0, 0);
+    padding: 0px 0px 100px 0px;
+}
+
+.consultar_notas th{
+    padding: 15px;   
+    font-size: 20px; 
+    margin-top: 10px;
+}
+
+.consultar_notas td{
+    border: 0.5px solid black;
+    border-radius: 0px;
+    background-color: rgb(121, 121, 105);
+    padding: 10px;
+}
