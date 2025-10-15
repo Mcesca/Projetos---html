@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoção de Animais - Encontre seu Novo Companheiro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <span>PETTHING</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="#home" class="nav-link">Início</a>
+                    <a href="#animals" class="nav-link">Animais</a>
+                    <a href="#about" class="nav-link">Sobre</a>
+                    <a href="#contact" class="nav-link">Contato</a>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Encontre seu Novo Melhor Amigo</h1>
+                <p class="hero-subtitle">Conectamos corações e patas. Descubra animais incríveis esperando por uma família amorosa.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToAnimals()">
+                        <i class="fas fa-search"></i>
+                        Buscar Animais
+                    </button>
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-info-circle"></i>
+                        Saiba Mais
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-card">
+                    <i class="fas fa-paw"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <h2>Filtrar Animais</h2>
+                <div class="search-form">
+                    <div class="search-group">
+                        <label for="orgSelect">Organização:</label>
+                        <select id="orgSelect" class="search-input">
+                            <option value="">Selecione uma organização</option>
+                        </select>
+                    </div>
+                    <div class="search-group">
+                        <label for="speciesFilter">Espécie:</label>
+                        <select id="speciesFilter" class="search-input">
+                            <option value="">Todas as espécies</option>
+                            <option value="dog">Cães</option>
+                            <option value="cat">Gatos</option>
+                            <option value="rabbit">Coelhos</option>
+                            <option value="bird">Pássaros</option>
+                        </select>
+                    </div>
+                    <div class="search-group">
+                        <label for="ageFilter">Idade:</label>
+                        <select id="ageFilter" class="search-input">
+                            <option value="">Todas as idades</option>
+                            <option value="baby">Filhote</option>
+                            <option value="young">Jovem</option>
+                            <option value="adult">Adulto</option>
+                            <option value="senior">Idoso</option>
+                        </select>
+                    </div>
+                    <button id="searchBtn" class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                        Buscar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animals Section -->
+    <section id="animals" class="animals-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Animais Disponíveis para Adoção</h2>
+                <p>Conheça nossos amigos de quatro patas que estão procurando um lar cheio de amor.</p>
+            </div>
+            
+            <!-- Loading State -->
+            <div id="loading" class="loading">
+                <div class="loading-spinner"></div>
+                <p>Carregando animais...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="error" class="error-message" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Ops! Algo deu errado</h3>
+                <p id="error-text">Não foi possível carregar os animais. Tente novamente mais tarde.</p>
+                <button class="btn btn-primary" onclick="loadAnimals()">
+                    <i class="fas fa-redo"></i>
+                    Tentar Novamente
+                </button>
+            </div>
+
+            <!-- Animals Grid -->
+            <div id="animals-grid" class="animals-grid">
+                <!-- Animals will be loaded here dynamically -->
+            </div>
+
+            <!-- Pagination -->
+            <div id="pagination" class="pagination" style="display: none;">
+                <button id="prevBtn" class="btn btn-secondary">
+                    <i class="fas fa-chevron-left"></i>
+                    Anterior
+                </button>
+                <span id="pageInfo" class="page-info">Página 1 de 1</span>
+                <button id="nextBtn" class="btn btn-secondary">
+                    Próxima
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Nossa Missão</h2>
+                    <p>Acreditamos que todo animal merece uma segunda chance e um lar cheio de amor. Trabalhamos incansavelmente para conectar animais resgatados com famílias que os amarão incondicionalmente.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>1000+</h3>
+                            <p>Animais Adotados</p>
+                        </div>
+                        <div class="stat">
+                            <h3>50+</h3>
+                            <p>Organizações Parceiras</p>
+                        </div>
+                        <div class="stat">
+                            <h3>24/7</h3>
+                            <p>Suporte Disponível</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-card">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Entre em Contato</h2>
+                <p>Tem dúvidas sobre adoção? Quer saber mais sobre nosso trabalho? Estamos aqui para ajudar!</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contato@adotepet.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(11) 9999-9999</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>São Paulo, SP - Brasil</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-heart"></i>
+                    <span>AdotePet</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Início</a>
+                    <a href="#animals">Animais</a>
+                    <a href="#about">Sobre</a>
+                    <a href="#contact">Contato</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AdotePet. Todos os direitos reservados. Feito com ❤️ para nossos amigos de quatro patas.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Animal Modal -->
+    <div id="animalModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="modal-body">
+                <!-- Animal details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
